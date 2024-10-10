@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://8lin4qwn3rpn"]
+
+[ext_resource type="Script" path="res://scripts/CharacterBody2D.gd" id="1_3g44o"]
+[ext_resource type="Texture2D" uid="uid://cfhbmkfjmhxr0" path="res://texture/New Piskel (1).png" id="2_fg1mj"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hf2rh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_fg1mj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0ymyc"]
+radius = 25.02
+
+[node name="player" type="CharacterBody2D"]
+position = Vector2(62, 40)
+script = ExtResource("1_3g44o")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(3.625, 3.3125)
+sprite_frames = SubResource("SpriteFrames_hf2rh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_0ymyc")
